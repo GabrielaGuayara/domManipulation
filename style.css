@@ -43,3 +43,23 @@
     background-color: var(--sub-menu-bg);
   }
   
+/* DOM MANIPULATIO: PART TWO BEGINS HERE */
+
+header, #top-menu{
+    position: relative;
+}
+
+#top-menu{
+    width: 100%;
+    z-index: 20;
+    transition: top 0.5s ease-out;
+}
+
+#sun-menu a:hover{
+    background-color: var(--top-menu-bg);
+}
+
+nav a.active{
+    background-color: var(--sub-menu-bg);
+    color: var(--main-bg);
+}
