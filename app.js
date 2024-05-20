@@ -6,4 +6,5 @@ mainEl.classList.add('flex-ctr')
 
 
 const topMenuEl = document.querySelector('#top-menu')
-topMenuEl.style.height = '100%'
+topMenuEl.style.height = '100%';
+topMenuEl.style.backgroundColor = 'var(--top-menu-bg)'
