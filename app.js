@@ -28,3 +28,7 @@ for(let i=0; i<menuLinks.length; i++) {
     link.innerHTML = `${menuLinks[i].text}`
     topMenuEl.append(link)
 };
+
+
+//DOM MANIPULATION: PART TWO BEGINS HERE
+const subMenuEl = document.querySelector("#sub-menu");
