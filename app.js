@@ -32,3 +32,6 @@ for(let i=0; i<menuLinks.length; i++) {
 
 //DOM MANIPULATION: PART TWO BEGINS HERE
 const subMenuEl = document.querySelector("#sub-menu");
+subMenuEl.style.height = '100%'
+let str2 = 'var(--sub-menu-bg)';
+subMenuEl.style.backgroundColor = str2;
