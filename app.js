@@ -61,6 +61,15 @@ console.log(e.target)
 
 e.target.classList.add("active");
 
+const arrOfLinks = Array.from(topMenuLinks);
+
+
+arrOfLinks.forEach(link=>{
+  if(link !== e.target){
+    link.classList.remove("active")
+  }
+})
+
 })
 
 
