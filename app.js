@@ -42,6 +42,7 @@ for(let i=0; i<menuLinks.length; i++) {
 
 //DOM MANIPULATION: PART TWO BEGINS HERE
 const subMenuEl = document.querySelector("#sub-menu");
+console.log(subMenuEl)
 subMenuEl.style.height = '100%'
 let str2 = 'var(--sub-menu-bg)';
 subMenuEl.style.backgroundColor = str2;
@@ -53,11 +54,12 @@ const topMenuLinks = document.querySelector("#top-menu a")
 
 topMenuEl.addEventListener("click", (e)=>{
 e.preventDefault();
+// console.log(e)
 if(!e.target.matches("a")){
     return;
 }
 
-console.log(e.target)
+// console.log(e.target)
 
 e.target.classList.add("active");
 
@@ -74,5 +76,22 @@ arrOfLinks.forEach(aElem=>{
 })
 
 
+
+const link = subMenuEl.find(link => link.text === e.target.textContent)
+
+
+menuLinks.forEach(link =>{
+
+  if(!e.target.classList.contains("active")){
+
+  }
 })
+
+const subLinks = Array.from(subMenuEl)
+
+// console.log(subLinks)
+
+// const subMenuLinks = subMenuEl.forEach(link => console.log(link.text))
+
+// console.log(subMenuLinks)
 
