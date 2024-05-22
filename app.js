@@ -75,23 +75,21 @@ arrOfLinks.forEach(aElem=>{
   }
 })
 
-
-
 const link = subMenuEl.find(link => link.text === e.target.textContent)
 
 
 menuLinks.forEach(link =>{
 
   if(!e.target.classList.contains("active")){
+    if(link.menuLinks){
+      subMenuEl.style.top = "100%"
+    }else{
+      subMenuEl.style.top = "0"
+    }
 
   }
+  })
 })
+//const subLinks = Array.from(subMenuEl)
 
-const subLinks = Array.from(subMenuEl)
-
-// console.log(subLinks)
-
-// const subMenuLinks = subMenuEl.forEach(link => console.log(link.text))
-
-// console.log(subMenuLinks)
 
