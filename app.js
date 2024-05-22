@@ -1,10 +1,20 @@
 var menuLinks = [
-    { text: 'about', href: '/about' },
-    { text: 'catalog', href: '/catalog' },
-    { text: 'orders', href: '/orders' },
-    { text: 'account', href: '/account' },
-  ];
-
+  {text: 'about', href: '/about'},
+  {text: 'catalog', href: '#', subLinks: [
+    {text: 'all', href: '/catalog/all'},
+    {text: 'top selling', href: '/catalog/top'},
+    {text: 'search', href: '/catalog/search'},
+  ]},
+  {text: 'orders', href: '#' , subLinks: [
+    {text: 'new', href: '/orders/new'},
+    {text: 'pending', href: '/orders/pending'},
+    {text: 'history', href: '/orders/history'},
+  ]},
+  {text: 'account', href: '#', subLinks: [
+    {text: 'profile', href: '/account/profile'},
+    {text: 'sign out', href: '/account/signout'},
+  ]},
+];
 
 
 const mainEl  = document.querySelector("main");
@@ -35,3 +45,18 @@ const subMenuEl = document.querySelector("#sub-menu");
 subMenuEl.style.height = '100%'
 let str2 = 'var(--sub-menu-bg)';
 subMenuEl.style.backgroundColor = str2;
+subMenuEl.classList.add('flex-around')
+
+
+const topMenuLinks = document.querySelector("#top-menu a")
+
+
+topMenuEl.addEventListener("click", (e)=>{
+e.preventDefault();
+if(!e.target.matches("a")){
+    return;
+}
+
+})
+
+
