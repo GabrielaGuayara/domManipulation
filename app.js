@@ -57,6 +57,10 @@ if(!e.target.matches("a")){
     return;
 }
 
+console.log(e.target)
+
+e.target.classList.add("active");
+
 })
 
 
