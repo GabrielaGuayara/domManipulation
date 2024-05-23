@@ -52,7 +52,6 @@ subMenuEl.classList.add('flex-around')
 const topMenuLinks = document.querySelector("#top-menu a")
 
 
-
 topMenuEl.addEventListener("click", (e)=>{
   e.preventDefault();
   // console.log(e)
@@ -79,7 +78,9 @@ topMenuEl.addEventListener("click", (e)=>{
 
   // console.log(e.target.textContent)
   if(e.target.textContent !== 'About'){
-    subMenuEl.style.top = '100%'; }
+    subMenuEl.style.top = '100%';
+
+}
   else{
     subMenuEl.style.top = '0';
   }
@@ -93,6 +94,12 @@ subMenuEl.addEventListener("click", (e)=>{
   if(!e.target.matches('a')){
     return;
   }
+  
+  //console.log(e.target)
+  
+  subMenuEl.style.top = '0';
+  
+  topMenuLinks.forEach(aElem =>{ aElem.classList.remove('active')});
   
 });
 
