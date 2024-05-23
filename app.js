@@ -89,7 +89,11 @@ topMenuEl.addEventListener("click", (e)=>{
 
 
 subMenuEl.addEventListener("click", (e)=>{
- 
+  e.preventDefault();
+  if(!e.target.matches('a')){
+    return;
+  }
+  
 });
 
  
