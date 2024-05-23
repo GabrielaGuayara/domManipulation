@@ -52,44 +52,46 @@ subMenuEl.classList.add('flex-around')
 const topMenuLinks = document.querySelector("#top-menu a")
 
 
+
 topMenuEl.addEventListener("click", (e)=>{
-e.preventDefault();
-// console.log(e)
-if(!e.target.matches("a")){
-    return;
-}
-
-// console.log(e.target)
-
-e.target.classList.add("active");
-
-const arrOfLinks = Array.from(topMenuLinks);
-
-
-arrOfLinks.forEach(aElem=>{
+  e.preventDefault();
+  // console.log(e)
+  if(!e.target.matches("a")){
+      return;
+  }
   
   // console.log(e.target)
-
-  if(aElem !== e.target){
-    aElem.classList.remove("active")
-  }
-})
-
-const link = subMenuEl.find(link => link.text === e.target.textContent)
-
-
-menuLinks.forEach(link =>{
-
-  if(!e.target.classList.contains("active")){
-    if(link.menuLinks){
-      subMenuEl.style.top = "100%"
-    }else{
-      subMenuEl.style.top = "0"
+  
+  e.target.classList.add("active");
+  
+  const arrOfLinks = Array.from(topMenuLinks);
+  
+  
+  arrOfLinks.forEach(aElem=>{
+    
+    // console.log(e.target)
+  
+    if(aElem !== e.target){
+      aElem.classList.remove("active")
     }
+  });
 
+
+  // console.log(e.target.textContent)
+  if(e.target.textContent !== 'About'){
+    subMenuEl.style.top = '100%'; }
+  else{
+    subMenuEl.style.top = '0';
   }
-  })
-})
+
+
+  });
+
+
+ 
+
+
+
 //const subLinks = Array.from(subMenuEl)
 
 
