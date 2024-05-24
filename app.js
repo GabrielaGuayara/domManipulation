@@ -100,13 +100,25 @@ subMenuEl.addEventListener("click", (e)=>{
   subMenuEl.style.top = '0';
   
   topMenuLinks.forEach(aElem =>{ aElem.classList.remove('active')});
+
   
+  mainEl.innerHTML=`<h1>${e.target.textContent}</h1>`
+
+  if(e.target.textContent === "about"){
+    mainEl.innerHTML= `<h1>About</h1>`
+  }
+
 });
+
+function buildSubmenu(subLinks){
+    subMenuEl = "";
+
+}
+
 
  
 
 
 
-//const subLinks = Array.from(subMenuEl)
 
 
