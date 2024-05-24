@@ -16,19 +16,27 @@ var menuLinks = [
   ]},
 ];
 
-
+//Creating a variable that allow  to change the background color, have text content and add a class
 const mainEl  = document.querySelector("main");
 let str = 'var(--main-bg)';
 mainEl.style.backgroundColor = str;
 mainEl.innerHTML = `<h1>DOM Manipultation</h1>`
 mainEl.classList.add('flex-ctr')
 
-
+//Creating the variable topMenuEl using querySelector that allows to change the height, change the background and add a classList to the top of the nav bar'
 const topMenuEl = document.querySelector('#top-menu')
 topMenuEl.style.height = '100%';
 topMenuEl.style.backgroundColor = 'var(--top-menu-bg)'
 topMenuEl.classList.add('flex-around')
 
+
+//
+menuLinks.forEach(link =>{
+  let aElem = document.createElement("a")
+  aElem.setAttribute("href", link.href)
+  aElem.textContent = link.text
+  topMenuEl.append(aElem)
+});
 
 
 for(let i=0; i<menuLinks.length; i++) {
@@ -40,9 +48,12 @@ for(let i=0; i<menuLinks.length; i++) {
 };
 
 
+
+
 //DOM MANIPULATION: PART TWO BEGINS HERE
+
 const subMenuEl = document.querySelector("#sub-menu");
-console.log(subMenuEl)
+
 subMenuEl.style.height = '100%'
 let str2 = 'var(--sub-menu-bg)';
 subMenuEl.style.backgroundColor = str2;
@@ -50,9 +61,12 @@ subMenuEl.classList.add('flex-around')
 
 
 const topMenuLinks = document.querySelector("#top-menu a")
+// console.log(topMenuLinks)
+
 
 
 topMenuEl.addEventListener("click", (e)=>{
+  // console.log(e.target)
   e.preventDefault();
   // console.log(e)
   if(!e.target.matches("a")){
@@ -64,20 +78,22 @@ topMenuEl.addEventListener("click", (e)=>{
   e.target.classList.add("active");
   
   const arrOfLinks = Array.from(topMenuLinks);
-  
+  // console.log(arrOfLinks)
+
   
   arrOfLinks.forEach(aElem=>{
     
-    // console.log(e.target)
+    // console.log(aElem.target)
   
     if(aElem !== e.target){
       aElem.classList.remove("active")
     }
   });
 
-
+ 
   // console.log(e.target.textContent)
   if(e.target.textContent !== 'About'){
+    buildSubmenu(menuLinks.find(item => item.text === e.target.textContent).subLinks)
     subMenuEl.style.top = '100%';
 
 }
@@ -87,7 +103,16 @@ topMenuEl.addEventListener("click", (e)=>{
 
   });
 
+function buildSubmenu(subLinks){
+    subMenuEl.innerHTML = "";
+    subLinks.forEach(link=>{
+      let aElem = document.createElement("a");
+      aElem.setAttribute("href", link.href)
+      aElem.textContent = link.text;
+      subMenuEl.append(aElem)
+    })
 
+}
 
 subMenuEl.addEventListener("click", (e)=>{
   e.preventDefault();
@@ -104,16 +129,23 @@ subMenuEl.addEventListener("click", (e)=>{
   
   mainEl.innerHTML=`<h1>${e.target.textContent}</h1>`
 
+
+
+  // console.log(subLinks)
+
+
   if(e.target.textContent === "about"){
+ 
     mainEl.innerHTML= `<h1>About</h1>`
   }
 
 });
 
-function buildSubmenu(subLinks){
-    subMenuEl = "";
+// const subMenuLinks = Array.from(menuLinks)
 
-}
+// let subLinks = 
+
+
 
 
  
