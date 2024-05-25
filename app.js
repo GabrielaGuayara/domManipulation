@@ -103,8 +103,10 @@ topMenuEl.addEventListener("click", (e)=>{
 
   //If the about link is clicked show about
   if(e.target.textContent === "about"){
- 
     mainEl.innerHTML= `<h1>About</h1>`
+  }else{
+  //Adding the header for the mainEl with the clicked <a> element
+  mainEl.innerHTML=`<h1>${e.target.textContent}</h1>`
   }
 
 
