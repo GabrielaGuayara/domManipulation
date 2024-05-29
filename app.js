@@ -54,7 +54,7 @@ subMenuEl.style.top='0'
 
 
 //Getting the links within the top menu nav bar
-const topMenuLinks = document.querySelector("#top-menu a")
+const topMenuLinks = document.querySelectorAll("#top-menu a")
 // console.log(topMenuLinks)
 
 
@@ -70,11 +70,10 @@ topMenuEl.addEventListener("click", (e)=>{
   }
 
   //Utilized array.from to convert a nodelist into an array 
-  const arrOfTopLinks = Array.from(topMenuLinks);
     
   
   //This forEach will remove the class active from links previously clicked
-  arrOfTopLinks.forEach(aElem => {
+  topMenuLinks.forEach(aElem => {
     if(aElem != e.target){
     aElem.classList.remove("active")}
   });
