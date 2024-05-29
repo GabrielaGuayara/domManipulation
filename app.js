@@ -38,17 +38,6 @@ menuLinks.forEach(item =>{
   topMenuEl.append(aElem)
 });
 
-//I used for loop to iterate the menu arrays because I did not have clear understandin about forEach. After reading, I understand how it works and I feel more confident using it so I updated the code.
-// for(let i=0; i<menuLinks.length; i++) {
-        
-//     let link = document.createElement("a")
-//     link.setAttribute("href", `${menuLinks[i].href}`)
-//     link.innerHTML = `${menuLinks[i].text}`
-//     topMenuEl.append(link)
-// };
-
-
-
 
 //DOM MANIPULATION: PART TWO BEGINS HERE
 
@@ -60,6 +49,8 @@ subMenuEl.style.height = '100%'
 let str2 = 'var(--sub-menu-bg)';
 subMenuEl.style.backgroundColor = str2;
 subMenuEl.classList.add('flex-around')
+subMenuEl.style.position = 'absolute';
+subMenuEl.style.top='0'
 
 
 //Getting the links within the top menu nav bar
